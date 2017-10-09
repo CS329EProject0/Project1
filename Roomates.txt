@@ -1,5 +1,5 @@
 firstName lastName id sex preferredRoomateSex wakeTime bedtime relCleanliness relGuestAptitude relLoudness
 
-Friedrich Ludwig 000001 m m 10 02 4 4 2 
+Friedrich Ludwig 000001 m m 1 3 4 4 2
 
 
