@@ -47,9 +47,12 @@ class People ():
 
 
 def main():
+        # initialize roommate database
         roommateList = People()
         infile = open("Roommates.txt", "r")
         roommateList.populatePeople(infile)
+
+        # use these to check user input
         yesCheck = ["Y", "y", "Yes", "yes", "YES"]
         noCheck = ["N", "n", "No", "no", "NO"]
         maleGenderCheck = ["M","m","Male","male","MALE"]
@@ -121,7 +124,7 @@ def main():
         else:
             user_gender = 'F'
 
-        user_preferredRoommateGender = input("\nDo you prefer to rooom with a  male or female? \n(M, F): ")
+        user_preferredRoommateGender = input("\nDo you prefer to room with a  male or female? \n(M, F): ")
         while user_preferredRoommateGender not in maleGenderCheck and user_preferredRoommateGender not in femaleGenderCheck:
             print ("Input not recognized.")
             user_preferredRoommateGender = input("\nDo you identify as male or female? \n(M, F): ")
@@ -138,9 +141,11 @@ def main():
         # initialize the person object for the new user
         newUser = Person(currentID + 1, user_firstName, user_lastName, user_wakingTime, user_bedtime, user_smoker, user_gender, user_preferredRoommateGender, user_cleanliness, user_guestComfort, user_loudness)
 
+        # parse the roommate database for matches
         matchScore = 1000000000
         matches = []
         for person in roommateList.people:
+            # filter results for smoking and gender preferences of user and potential roommate
             if person.smoker == newUser.smoker and person.gender == newUser.preferredRoommateGender and person.preferredRoommateGender == newUser.gender:
                 score = math.sqrt(pow(newUser.wakingTime - person.wakingTime, 2) + pow(newUser.bedtime - person.bedtime, 2) + pow(newUser.cleanliness - person.cleanliness, 2) + pow(newUser.guestComfort - person.guestComfort, 2) + pow(newUser.loudness - person.loudness, 2))
                 if score < matchScore:
@@ -150,15 +155,21 @@ def main():
                 elif score == matchScore:
                     matches.append(person)
 
+        # print out matches
+        print ('\nWe found '+str(len(matches)) + ' roommate(s) matching your preferences in our database:')
         for match in matches:
             print (match.firstName + ' ' + match.lastName)
+        print ()
+
+        return matches
 
         # prompt user whether or not they would like to be added to the database
-        userJoinDatabase = str(input("Would you like to add yourself to the roommate databse? \n(Y or N): "))
+        # currently not working, will fix for 2nd release
+        userJoinDatabase = str(input("Would you like to add yourself to the roommate database? \n(Y or N): "))
 
         roommateList.addPerson(newUser)
 
-#main()
+main()
 
 class TestSortRoomates(unittest.TestCase):
     infile = open('Roommates.txt','r')
