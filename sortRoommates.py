@@ -17,6 +17,9 @@ class Person ():
         self.loudness = int(loudness)
         self.smoker = (smoker)
 
+    def __str__(self):
+        return self.firstName + " " + self.lastName
+
 # this class creates an object that holds all the people in a list
 class People ():
 
@@ -46,8 +49,44 @@ class People ():
     def __ne__(self, other):
         return not self.people == other.people
 
+<<<<<<< HEAD
     # conducts survey and finds matches for user, then adds user to database if desired
     def addNewUser (self):
+=======
+class Queue:
+
+    def __init__(self):
+        self.items = []
+
+    def isEmpty(self):
+        return self.items == []
+
+    def enqueue(self, item):
+        self.items.insert(0, item)
+
+
+    def dequeue(self):
+        return self.items.pop()
+
+    def size(self):
+        return len(self.items)
+
+    def peek(self):
+        return self.items[-1]
+
+    def __str__(self):
+        for person in self.items:
+            print(str(person))
+        return "\n"
+
+
+def main():
+        # initialize roommate database
+        roommateList = People()
+        infile = open("Roommates.txt", "r")
+        roommateList.populatePeople(infile)
+
+>>>>>>> 39ec30108b372b5e3ed803d1fc02128b3ab33e0a
         # use these to check user input
         yesCheck = ["Y", "y", "Yes", "yes", "YES"]
         noCheck = ["N", "n", "No", "no", "NO"]
@@ -116,25 +155,38 @@ class People ():
 
         # parse the roommate database for matches
         matchScore = 1000000000
+<<<<<<< HEAD
         matches = []
         for person in self.people:
+=======
+        matches = Queue()
+        for person in roommateList.people:
+>>>>>>> 39ec30108b372b5e3ed803d1fc02128b3ab33e0a
             # filter results for smoking and gender preferences of user and potential roommate
             if person.smoker == newUser.smoker and person.gender == newUser.preferredRoommateGender and person.preferredRoommateGender == newUser.gender:
-                score = math.sqrt(pow(newUser.wakingTime - person.wakingTime, 2) + pow(newUser.bedtime - person.bedtime, 2) + pow(newUser.cleanliness - person.cleanliness, 2) + pow(newUser.guestComfort - person.guestComfort, 2) + pow(newUser.loudness - person.loudness, 2))
+                score = math.sqrt(pow(newUser.wakingTime - person.wakingTime, 2) + pow(newUser.bedtime - person.bedtime, 2) + \
+                	pow(newUser.cleanliness - person.cleanliness, 2) + pow(newUser.guestComfort - person.guestComfort, 2) + pow(newUser.loudness - person.loudness, 2))
                 if score < matchScore:
                     matchScore = score
-                    matches = []
-                    matches.append (person)
+                    matches.enqueue(person)
                 elif score == matchScore:
-                    matches.append(person)
+                    matches.enqueue(person)
+
+                if matches.size() >= 21: # if queue is too big, pop off person who matches the least
+                    	matches.dequeue()
+                
 
         # print out matches
-        print ('\nWe found '+str(len(matches)) + ' roommate(s) matching your preferences in our database:')
-        for match in matches:
-            print (match.firstName + ' ' + match.lastName)
-        print ()
+        print ('\nWe found '+str(matches.size()) + ' roommate(s) matching your preferences in our database:')
+        print(matches)
 
+<<<<<<< HEAD
         
+=======
+        return matches
+        
+
+>>>>>>> 39ec30108b372b5e3ed803d1fc02128b3ab33e0a
         # prompt user whether or not they would like to be added to the database
         # currently not working, will fix for 2nd release
         userJoinDatabase = str(input("Would you like to add yourself to the roommate database? \n(Y or N): "))
