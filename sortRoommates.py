@@ -162,6 +162,7 @@ def main():
         print ()
 
         return matches
+        
 
         # prompt user whether or not they would like to be added to the database
         # currently not working, will fix for 2nd release
