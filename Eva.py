@@ -56,7 +56,7 @@ def main():
     # uncomment the line above if you want to erase the original data
     # open("filename","w").close()
     
-    file = open("textfile.txt","w")
+    file = open("roommates.txt","w")
     num = eval(input("Enter the number of person info you want to generate: "))
     for i in range(num):
         newPerson = people()
