@@ -65,7 +65,14 @@ class People ():
         # prompt user for their information
         # unique info
         user_firstName = str(input("Enter your first name: "))
+        while not user_firstName.isalpha() or ' ' in user_firstName:
+            print ('Input not recognized.')
+            user_firstName = str(input("Enter your first name: "))
+
         user_lastName = str(input("Enter your last name: "))
+        while not user_lastName.isalpha() or ' ' in user_lastName:
+            print ('Input not recognized.')
+            user_lastName = str(input("Enter your last name: "))
 
         # relative questions
         user_cleanliness = int(input("On a scale of 1 to 5, how clean are you? \n(1= not clean, 5 = very clean): "))
@@ -145,8 +152,8 @@ class People ():
             roommateDatabase.close()
             self.addPerson(newUser)
 
-        # close the database file
-        roommateDatabase.close()
+            # close the database file
+            roommateDatabase.close()
 
 
 def main():
