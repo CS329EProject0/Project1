@@ -1,54 +1,66 @@
 
 import tkinter
-from tkinter import Tk, Label, Entry, StringVar
+from tkinter import Tk, Label, Entry, StringVar, Button
 '''
-# remnant of entry class I should finish
 class EntryFormat:
-    def __init__(self,labelTxt):
+    def __init__(self,master):
         
-        self.label = Label(master, textvariable=labelTxt, height=4)
-        self.label.pack(side="left")
+        self.resultAns = ""
+        self.master = master
+        master.title("user survey")
+        
+        # enter the name
+        self.label = Label(master, text="Please enter your name: ")
+        self.label.pack()
 
         self.nameBox = Entry(master)
-        self.nameBox.pack(side="left")
-        self.Value = self.nameBox.get()
-'''
+        self.nameBox.pack()
+        self.resultAns += str(self.nameBox.get())
+        # enter the sleep time
 
+
+
+'''
 # Code to add widgets will go here...
 master = tkinter.Tk()
+
 # add entry box for name
 nameText=StringVar()
-nameText.set("Enter directory of log files")
-nameLabel=Label(master, textvariable=nameText, height=4)
-nameLabel.pack(side="left")
+nameText.set("Please enter your name")
+nameLabel=Label(master, textvariable=nameText)
+nameLabel.pack()
 
 nameBox = Entry(master)
-nameBox.pack(side="left")
-nameVal = nameBox.get()
-# add entry box for sleepTime
-sleepText=StringVar()
-sleepText.set("On average, what time do you go to sleep? ")
-sleepLabel=Label(master, textvariable=sleepText, height=4)
-sleepLabel.pack(side="left")
+nameBox.pack()
 
-sleepBox = Entry(master)
-sleepBox.pack(side="left")
+
 # add entry box for wakeTime
 wakeText=StringVar()
 wakeText.set("On average, what time do you wake up?")
 wakeLabel=Label(master, textvariable=wakeText, height=4)
-wakeLabel.pack(side="left")
+wakeLabel.pack()
 
 wakeBox = Entry(master)
-wakeBox.pack(side="left")
+wakeBox.pack()
+
 # add entry box for smoke
 smokeText=StringVar()
 smokeText.set("Are you okay with somking? \n(Y or N): ")
 smokeLabel=Label(master, textvariable=smokeText, height=4)
-smokeLabel.pack(side="left")
+smokeLabel.pack()
 
 smokeBox = Entry(master)
-smokeBox.pack(side="left")
+smokeBox.pack()
+
+# get all the results
+def callback1():
+    print(nameBox.get())
+    print(wakeBox.get())
+    print(smokeBox.get())
+    
+b = Button(master, text="get", width=10, command=callback1)
+b.pack()
+
 
 master.mainloop()
 
