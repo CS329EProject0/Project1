@@ -1,5 +1,6 @@
 import math
 import unittest
+import operator
 
 # this class represents each person's traits and preferences
 class Person ():
@@ -16,6 +17,8 @@ class Person ():
         self.guestComfort = int(guestComfort)
         self.loudness = int(loudness)
         self.smoker = (smoker)
+
+        self.score = 0
 
     def __str__(self):
         return self.firstName + " " + self.lastName
@@ -126,23 +129,20 @@ def main():
         newUser = Person(currentID, user_firstName, user_lastName, user_wakingTime, user_bedtime, user_smoker, user_gender, user_preferredRoommateGender, user_cleanliness, user_guestComfort, user_loudness)
 
         # parse the roommate database for matches
-        matchScore = 1000000000
-        matches = []
+        roommateScores = {}
         for person in roommateList.people:
             # filter results for smoking and gender preferences of user and potential roommate
             if person.smoker == newUser.smoker and person.gender == newUser.preferredRoommateGender and person.preferredRoommateGender == newUser.gender:
-                score = math.sqrt(pow(newUser.wakingTime - person.wakingTime, 2) + pow(newUser.bedtime - person.bedtime, 2) + \
+                roommateScores[person] = math.sqrt(pow(newUser.wakingTime - person.wakingTime, 2) + pow(newUser.bedtime - person.bedtime, 2) + \
                 	pow(newUser.cleanliness - person.cleanliness, 2) + pow(newUser.guestComfort - person.guestComfort, 2) + pow(newUser.loudness - person.loudness, 2))
-                if score < matchScore:
-                    matchScore = score
-                    matches.append(person)
-                elif score == matchScore:
-                    matches.append(person)
-
+                
+        sorted_roommates = sorted(roommateScores.items(), key = operator.itemgetter(1))
+        matches = sorted_roommates[-10:]
 
         # print out matches
         print ('\nWe found '+str(len(matches)) + ' roommate(s) matching your preferences in our database:')
-        print(matches)
+        for i in range(len(matches)):
+            print("NAME:", matches[i][0], "\tSCORE:", matches[i][1])
         return matches
         # prompt user whether or not they would like to be added to the database
         # currently not working, will fix for 2nd release
