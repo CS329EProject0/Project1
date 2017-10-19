@@ -1,29 +1,15 @@
 
 import tkinter
 from tkinter import Tk, Label, Entry, StringVar, Button
-'''
-class EntryFormat:
-    def __init__(self,master):
-        
-        self.resultAns = ""
-        self.master = master
-        master.title("user survey")
-        
-        # enter the name
-        self.label = Label(master, text="Please enter your name: ")
-        self.label.pack()
 
-        self.nameBox = Entry(master)
-        self.nameBox.pack()
-        self.resultAns += str(self.nameBox.get())
-        # enter the sleep time
-
-
-
-'''
 # Code to add widgets will go here...
 master = tkinter.Tk()
+'''
+def helloCallBack():
+    print( "Hello Python", "Hello World")
 
+B = Button(master, text ="Hello", command = helloCallBack)
+'''
 # add entry box for name
 nameText=StringVar()
 nameText.set("Please enter your name")
@@ -49,18 +35,27 @@ smokeText.set("Are you okay with somking? \n(Y or N): ")
 smokeLabel=Label(master, textvariable=smokeText, height=4)
 smokeLabel.pack()
 
-smokeBox = Entry(master)
-smokeBox.pack()
+SmokeVal = "0"
+def assignSmokeYes():
+    global SmokeVal
+    SmokeVal = "Y"
+def assignSmokeNo():
+    global SmokeVal
+    SmokeVal = "N"
+yes_button = Button(master, text ="Yes", command = assignSmokeYes)
+yes_button.pack()
+no_button = Button(master, text ="No", command = assignSmokeNo)
+no_button.pack()
 
 # get all the results
-def callback1():
-    print(nameBox.get())
-    print(wakeBox.get())
-    print(smokeBox.get())
-    
-b = Button(master, text="get", width=10, command=callback1)
-b.pack()
 
+def callback1():
+    result = str(nameBox.get())+str(wakeBox.get())+str(SmokeVal)
+    print(result)
+    
+    
+b = Button(master, text="Submit", width=10, command = callback1)
+b.pack()
 
 master.mainloop()
 
