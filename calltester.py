@@ -1,19 +1,34 @@
-
-import tkinter
+import tkinter as tk
 from tkinter import *
 
-# Code to add widgets will go here...
-master = tkinter.Tk()
+def on_configure(event):
+    # update scrollregion after starting 'mainloop'
+    # when all widgets are in canvas
+    canvas.configure(scrollregion=canvas.bbox('all'))
 
-# scroll bar
-scrollbar = Scrollbar(master)
-scrollbar.pack(side=RIGHT, fill=Y)
-listbox = Listbox(master, yscrollcommand=scrollbar.set)
-for i in range(1000):
-    listbox.insert(END, str(i))
-listbox.pack(side=LEFT, fill=BOTH)
 
-scrollbar.config(command=listbox.yview)
+master = tk.Tk()
+
+# --- create canvas with scrollbar ---
+
+canvas = tk.Canvas(master)
+canvas.pack(side=tk.LEFT)
+
+scrollbar = tk.Scrollbar(master, command=canvas.yview)
+scrollbar.pack(side=tk.LEFT, fill='y')
+
+canvas.configure(yscrollcommand = scrollbar.set)
+
+# update scrollregion after starting 'mainloop'
+# when all widgets are in canvas
+canvas.bind('<Configure>', on_configure)
+
+# --- put frame in canvas ---
+
+frame = tk.Frame(canvas)
+canvas.create_window((0,0), window=frame, anchor='nw')
+
+# --- add widgets in frame ---
 
 # add entry box for name
 nameText=StringVar()
@@ -133,4 +148,3 @@ b = Button(master, text="Submit", width=10, command = callback1)
 b.pack()
 
 master.mainloop()
-
