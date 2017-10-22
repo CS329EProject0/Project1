@@ -5,7 +5,8 @@ import operator
 # this class represents each person's traits and preferences
 class Person ():
 
-    def __init__(self, id, firstName, lastName, wakingTime, bedtime, smoker, gender, preferredRoommateGender, cleanliness, guestComfort, loudness):
+    def __init__(self, id, firstName, lastName, wakingTime, bedtime, smoker, \
+    gender, preferredRoommateGender, cleanliness, guestComfort, loudness):
         self.firstName = firstName
         self.lastName = lastName
         self.id = id
@@ -18,7 +19,7 @@ class Person ():
         self.loudness = int(loudness)
         self.smoker = (smoker)
 
-        self.score = 0
+        # self.score = 0
 
     def __str__(self):
         return self.firstName + " " + self.lastName
@@ -45,12 +46,21 @@ class People ():
             self.addPerson(Person(newPersonData[0],newPersonData[1],newPersonData[2],newPersonData[3],newPersonData[4],newPersonData[5], \
                 newPersonData[6], newPersonData[7],newPersonData[8],newPersonData[9], newPersonData[10]))
 
-    # override the equal and not equal functions for later unit testing
+    def size(self):
+        return len(self.people)
+
+     # override the equal and not equal functions for later unit testing
     def __eq__(self, other):
         return self.people == other.people
 
     def __ne__(self, other):
         return not self.people == other.people
+
+    def __str__(self):
+    	returnstr = ''
+    	for person in self.people:
+    		returnstr += str(person) + '\n'
+    	return returnstr
 
     # conducts survey and finds matches for user, then adds user to database if desired
     def addNewUser (self):
@@ -222,6 +232,15 @@ class TestSortRoomates(unittest.TestCase):
         newFirstPersonInDatabase = self.testDatabase.people[0]       
         self.assertNotEqual(firstPersonInDatabase, newFirstPersonInDatabase)
 
+    def testPeopleSize (self):
+    	exogenousSize = len(self.testDatabase.people)
+    	self.assertEqual(exogenousSize, self.testDatabase.size())
+
+    def testPeople__str__ (self):
+    	peopleDatabaseStr = ''
+    	for i in range (len(self.testDatabase.people)):
+    		peopleDatabaseStr += self.testDatabase.people[i].firstName + ' ' + self.testDatabase.people[i].lastName +'\n'
+    	self.assertEqual(peopleDatabaseStr, str(self.testDatabase))
+
 if __name__ == '__main__':
     unittest.main()
-
