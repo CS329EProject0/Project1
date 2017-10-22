@@ -4,17 +4,16 @@ from tkinter import *
 
 # Code to add widgets will go here...
 master = tkinter.Tk()
-
-# scroll bar
+# scroll bar, should fix for 3rd release
+'''
 scrollbar = Scrollbar(master)
 scrollbar.pack(side=RIGHT, fill=Y)
 listbox = Listbox(master, yscrollcommand=scrollbar.set)
-for i in range(1000):
-    listbox.insert(END, str(i))
-listbox.pack(side=LEFT, fill=BOTH)
+
+listbox.pack()
 
 scrollbar.config(command=listbox.yview)
-
+'''
 # add entry box for name
 nameText=StringVar()
 nameText.set("Please enter your name")
@@ -48,7 +47,7 @@ smokeText.set("Are you okay with somking? \n(Y or N): ")
 smokeLabel=Label(master, textvariable=smokeText, height=4)
 smokeLabel.pack()
 
-smokeVal = ""# check error value
+smokeVal = "0"# check error value
 smokeValYes = Radiobutton(master, text ="Yes", variable = smokeVal, value = 'Y')
 smokeValYes.pack()
 smokeValNo = Radiobutton(master, text ="No", variable = smokeVal, value = 'N')
@@ -70,7 +69,7 @@ genderValMale.pack()
 # add entry box for gender preference
 genderPrefText=StringVar()
 genderPrefText.set("Please choose your preferred roomate gender")
-genderPrefLabel=Label(master, textvariable=smokeText, height=4)
+genderPrefLabel=Label(master, textvariable=genderPrefText, height=4)
 genderPrefLabel.pack()
 
 genderPrefVal = ""
