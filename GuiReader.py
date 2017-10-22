@@ -48,17 +48,11 @@ smokeText.set("Are you okay with somking? \n(Y or N): ")
 smokeLabel=Label(master, textvariable=smokeText, height=4)
 smokeLabel.pack()
 
-SmokeVal = "0"# check error value
-def assignSmokeYes():
-    global SmokeVal
-    SmokeVal = "Y"
-def assignSmokeNo():
-    global SmokeVal
-    SmokeVal = "N"
-yes_button = Button(master, text ="Yes", command = assignSmokeYes)
-yes_button.pack()
-no_button = Button(master, text ="No", command = assignSmokeNo)
-no_button.pack()
+smokeVal = ""# check error value
+smokeValYes = Radiobutton(master, text ="Yes", variable = smokeVal, value = 'Y')
+smokeValYes.pack()
+smokeValNo = Radiobutton(master, text ="No", variable = smokeVal, value = 'N')
+smokeValNo.pack()
 
 # add entry box for gender
 genderText=StringVar()
@@ -66,35 +60,24 @@ genderText.set("Please choose your gender")
 genderLabel=Label(master, textvariable=genderText, height=4)
 genderLabel.pack()
 
-genderVal = "0"# check error value
-def assignFemale():
-    global genderVal
-    genderVal = "F"
-def assignMale():
-    global genderVal
-    genderVal = "M"
-F_button = Button(master, text ="Female", command = assignFemale)
-F_button.pack()
-M_button = Button(master, text ="Male", command = assignMale)
-M_button.pack()
+genderVal = ""# check error value
+
+genderValFemale = Radiobutton(master, text ="Female", variable = genderVal, value = 'F')
+genderValFemale.pack()
+genderValMale = Radiobutton(master, text ="Male", variable = genderVal, value = 'M')
+genderValMale.pack()
 
 # add entry box for gender preference
-gPreText=StringVar()
-gPreText.set("Please choose your preferred roomate gender")
-gPreLabel=Label(master, textvariable=smokeText, height=4)
-gPreLabel.pack()
+genderPrefText=StringVar()
+genderPrefText.set("Please choose your preferred roomate gender")
+genderPrefLabel=Label(master, textvariable=smokeText, height=4)
+genderPrefLabel.pack()
 
-gPreVal = "0"
-def assigngF():
-    global gPreVal
-    gPreVal = "F"
-def assigngM():
-    global gPreVal
-    gPreVal = "M"
-gF_button = Button(master, text ="Female", command = assigngF)
-gF_button.pack()
-gM_button = Button(master, text ="Male", command = assigngM)
-gM_button.pack()
+genderPrefVal = ""
+genderPrefValFemale = Radiobutton(master, text ="Female", variable = genderPrefVal, value = 'F')
+genderPrefValFemale.pack()
+genderPrefValMale = Radiobutton(master, text ="Male", variable = genderPrefVal, value = 'M')
+genderPrefValMale.pack()
 
 # add entry box for Cleaness
 cleanText=StringVar()
@@ -126,7 +109,7 @@ soundBox.pack()
 # get all the results
 def callback1():
     result = str(nameBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())+" "+str(SmokeVal)\
-             +" "+str(genderVal)+" "+str(gPreVal)+" "+str(cleanBox.get())+" "+str(guestBox.get())+" "+str(soundBox.get())
+             +" " + genderVal + " " + genderPrefVal + " " + (cleanBox.get())+" "+str(guestBox.get())+" "+str(soundBox.get())
     print(result)
     
 b = Button(master, text="Submit", width=10, command = callback1)

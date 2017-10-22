@@ -132,7 +132,7 @@ class People ():
             # filter results for smoking and gender preferences of user and potential roommate
             if person.smoker == newUser.smoker and person.gender == newUser.preferredRoommateGender and person.preferredRoommateGender == newUser.gender:
                 roommateScores[person] = math.sqrt(pow(newUser.wakingTime - person.wakingTime, 2) + pow(newUser.bedtime - person.bedtime, 2) + \
-                	pow(newUser.cleanliness - person.cleanliness, 2) + pow(newUser.guestComfort - person.guestComfort, 2) + pow(newUser.loudness - person.loudness, 2))
+                    pow(newUser.cleanliness - person.cleanliness, 2) + pow(newUser.guestComfort - person.guestComfort, 2) + pow(newUser.loudness - person.loudness, 2))
                 
         sorted_roommates = sorted(roommateScores.items(), key = operator.itemgetter(1))
         matches = sorted_roommates[:10]
@@ -157,6 +157,8 @@ class People ():
 
 
 def main():
+		# import the gui file
+        import GuiReader
         # initialize roommate database
         roommateList = People()
         infile = open("Roommates.txt", "r")
@@ -220,7 +222,6 @@ class TestSortRoomates(unittest.TestCase):
         newFirstPersonInDatabase = self.testDatabase.people[0]       
         self.assertNotEqual(firstPersonInDatabase, newFirstPersonInDatabase)
 
-
-#if __name__ == '__main__':
-#    unittest.main()
+if __name__ == '__main__':
+    unittest.main()
 
