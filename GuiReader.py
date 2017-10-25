@@ -2,23 +2,45 @@
 import tkinter
 from tkinter import *
 
-# Code to add widgets will go here...
+# scroll bar magic, don't touch
+def myfunction(event):
+    canvas.configure(scrollregion=canvas.bbox("all"),width=500,height=500)
+# begin of GUI loop is here    
 master = tkinter.Tk()
-# scroll bar, should fix for 3rd release
-'''
-scrollbar = Scrollbar(master)
-scrollbar.pack(side=RIGHT, fill=Y)
-listbox = Listbox(master, yscrollcommand=scrollbar.set)
+# scroll bar magic, don't touch
+sizex = 800
+sizey = 800
+posx  = 100
+posy  = 100
+master.wm_geometry("%dx%d+%d+%d" % (sizex, sizey, posx, posy))
 
-listbox.pack()
+myframe=Frame(master,relief=GROOVE,width=50,height=100,bd=1)
+myframe.place(x=10,y=10)
 
-scrollbar.config(command=listbox.yview)
-'''
+canvas=Canvas(myframe)
+frame=Frame(canvas)
+myscrollbar=Scrollbar(myframe,orient="vertical",command=canvas.yview)
+canvas.configure(yscrollcommand=myscrollbar.set)
+
+myscrollbar.pack(side="right",fill="y")
+canvas.pack(side="left")
+canvas.create_window((0,0),window=frame,anchor='nw')
+frame.bind("<Configure>",myfunction)
+
+# complete scrollbar magic
+
+# Code to add widgets 
 # add entry box for name
+'''
 nameText=StringVar()
 nameText.set("Please enter your name")
 nameLabel=Label(master, textvariable=nameText)
 nameLabel.pack()
+
+'''
+Label(frame,text="Please enter your name").grid(row=1,column=0)
+Label(frame,text="On average, what time do you sleep?").grid(row=2,column=0)
+'''
 
 nameBox = Entry(master)
 nameBox.pack()
@@ -113,6 +135,6 @@ def callback1():
     
 b = Button(master, text="Submit", width=10, command = callback1)
 b.pack()
-
+'''
 master.mainloop()
 
