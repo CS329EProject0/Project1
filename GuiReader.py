@@ -28,8 +28,6 @@ frame.bind("<Configure>",myfunction)
 
 # complete scrollbar magic
 
-
-
 # Code to add widgets 
 # add entry box for name
 
@@ -98,7 +96,7 @@ soundBox.grid(row=21,column=0)
 # get all the results
 def callback1():
     result = str(nameBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())\
-             +" " + str(genderVal) + " " + str(genderPrefVal) + " "+str(smokeVal)+" " + str(cleanBox.get())+" "+str(guestBox.get())+" "+str(soundBox.get())
+             +" " + str(genderVal.get()) + " " + str(genderPrefVal.get()) + " "+str(smokeVal.get())+" " + str(cleanBox.get())+" "+str(guestBox.get())+" "+str(soundBox.get())
     print(result)
     
 b = Button(frame, text="Submit", width=10, command = callback1)
