@@ -16,28 +16,6 @@ master.wm_geometry("%dx%d+%d+%d" % (sizex, sizey, posx, posy))
 myframe=Frame(master,relief=GROOVE,width=50,height=100,bd=1)
 myframe.place(x=10,y=10)
 
-<<<<<<< HEAD
-scrollbar.config(command=listbox.yview)
-'''
-
-# add entry boxes for first and last name
-
-firstNameText=StringVar()
-firstNameText.set("Please enter your first name:")
-firstNameLabel=Label(master, textvariable=firstNameText)
-firstNameLabel.pack()
-
-firstNameBox = Entry(master)
-firstNameBox.pack()
-
-lastNameText=StringVar()
-lastNameText.set("Please enter your last name:")
-lastNameLabel=Label(master, textvariable=lastNameText)
-lastNameLabel.pack()
-
-lastNameBox = Entry(master)
-lastNameBox.pack()
-=======
 canvas=Canvas(myframe)
 frame=Frame(canvas)
 myscrollbar=Scrollbar(myframe,orient="vertical",command=canvas.yview)
@@ -50,121 +28,83 @@ frame.bind("<Configure>",myfunction)
 
 # complete scrollbar magic
 
+
+
 # Code to add widgets 
 # add entry box for name
-'''
-nameText=StringVar()
-nameText.set("Please enter your name")
-nameLabel=Label(master, textvariable=nameText)
-nameLabel.pack()
 
-'''
 Label(frame,text="Please enter your name").grid(row=1,column=0)
-Label(frame,text="On average, what time do you sleep?").grid(row=2,column=0)
-'''
-
-nameBox = Entry(master)
-nameBox.pack()
->>>>>>> c5a7278b5575ff5991507537202d0aa9503ab278
+nameBox = Entry(frame)
+nameBox.grid(row=2,column=0)
 
 # add entry box for sleepTime
-sleepText=StringVar()
-sleepText.set("On average, what time do you go to sleep?")
-sleepLabel=Label(master, textvariable=sleepText, height=4)
-sleepLabel.pack()
-
-sleepBox = Entry(master)
-sleepBox.pack()
+Label(frame,text="On average, what time do you sleep?").grid(row=3,column=0)
+sleepBox = Entry(frame)
+sleepBox.grid(row=4,column=0)
 
 # add entry box for wakeTime
-wakeText=StringVar()
-wakeText.set("On average, what time do you wake up?")
-wakeLabel=Label(master, textvariable=wakeText, height=4)
-wakeLabel.pack()
-
-wakeBox = Entry(master)
-wakeBox.pack()
+Label(frame,text="On average, what time do you wake up?").grid(row=5,column=0)
+wakeBox = Entry(frame)
+wakeBox.grid(row=6,column=0)
 
 # add entry box for gender
-genderText=StringVar("")
-genderText.set("Please select your gender:")
-genderLabel=Label(master, textvariable=genderText, height=4)
-genderLabel.pack()
-
+Label(frame,text="Please select your gender:").grid(row=7,column=0)
 
 genderVal = StringVar()
 genderVal.set("N/A")
 
-genderValFemale = Radiobutton(master, text ="Female", variable = genderVal, value = 'F')
-genderValFemale.pack()
-genderValMale = Radiobutton(master, text ="Male", variable = genderVal, value = 'M')
-genderValMale.pack()
+genderValFemale = Radiobutton(frame, text ="Female", variable = genderVal, value = 'F')
+genderValFemale.grid(row=8,column=0)
+genderValMale = Radiobutton(frame, text ="Male", variable = genderVal, value = 'M')
+genderValMale.grid(row=9,column=0)
 
 # add entry box for gender preference
-genderPrefText=StringVar()
-genderPrefText.set("Please select your preferred roomate gender:")
-genderPrefLabel=Label(master, textvariable=genderPrefText, height=4)
-genderPrefLabel.pack()
+Label(frame,text="Please select your preferred roomate gender:").grid(row=10,column=0)
 
 genderPrefVal = StringVar()
 genderPrefVal.set("N/A")
-genderPrefValFemale = Radiobutton(master, text ="Female", variable = genderPrefVal, value = 'F')
-genderPrefValFemale.pack()
-genderPrefValMale = Radiobutton(master, text ="Male", variable = genderPrefVal, value = 'M')
-genderPrefValMale.pack()
+
+genderPrefValFemale = Radiobutton(frame, text ="Female", variable = genderPrefVal, value = 'F')
+genderPrefValFemale.grid(row=11,column=0)
+genderPrefValMale = Radiobutton(frame, text ="Male", variable = genderPrefVal, value = 'M')
+genderPrefValMale.grid(row=12,column=0)
 
 # add entry box for smoke
-smokeText=StringVar()
-smokeText.set("Are you okay with somking? \n(Y or N):")
-smokeLabel=Label(master, textvariable=smokeText, height=4)
-smokeLabel.pack()
+Label(frame,text="Are you okay with somking? \n(Y or N):").grid(row=13,column=0)
 
 smokeVal = StringVar()
 smokeVal.set("N/A")
-smokeValYes = Radiobutton(master, text ="Yes", variable = smokeVal, value = 'Y')
-smokeValYes.pack()
-smokeValNo = Radiobutton(master, text ="No", variable = smokeVal, value = 'N')
-smokeValNo.pack()
+
+smokeValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'Y')
+smokeValYes.grid(row=14,column=0)
+smokeValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
+smokeValNo.grid(row=15,column=0)
 
 # add entry box for Cleaness
-cleanText=StringVar()
-cleanText.set("Please enter your level of cleaniess, from 1-5")
-cleanLabel=Label(master, textvariable=cleanText, height=4)
-cleanLabel.pack()
-
-cleanBox = Entry(master)
-cleanBox.pack()
+Label(frame,text="Please enter your level of cleaniess, from 1-5").grid(row=16,column=0)
+cleanBox = Entry(frame)
+cleanBox.grid(row=17,column=0)
 
 # add entry box for guests
-guestText=StringVar()
-guestText.set("Please enter your comfortability with guests")
-guestLabel=Label(master, textvariable=guestText, height=4)
-guestLabel.pack()
-
-guestBox = Entry(master)
-guestBox.pack()
+Label(frame,text="Please enter your comfortability with guests").grid(row=18,column=0)
+guestBox = Entry(frame)
+guestBox.grid(row=19,column=0)
 
 # add entry box for sound
-soundText=StringVar()
-soundText.set("How comfortable are you with noise?")
-soundLabel=Label(master, textvariable=soundText, height=4)
-soundLabel.pack()
-
-soundBox = Entry(master)
-soundBox.pack()
+Label(frame,text="Please enter your level of comfortability with sound").grid(row=20,column=0)
+soundBox = Entry(frame)
+soundBox.grid(row=21,column=0)
 
 # get all the results
 def callback1():
-    result = str(firstNameBox.get())+" "+lastNameBox.get()+" "+str(sleepBox.get())+" "+str(wakeBox.get())+" "+str(SmokeVal)\
-             +" " + genderVal + " " + genderPrefVal + " " + (cleanBox.get())+" "+str(guestBox.get())+" "+str(soundBox.get())
+    result = str(nameBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())\
+             +" " + str(genderVal) + " " + str(genderPrefVal) + " "+str(smokeVal)+" " + str(cleanBox.get())+" "+str(guestBox.get())+" "+str(soundBox.get())
     print(result)
     
-b = Button(master, text="Submit", width=10, command = callback1)
-b.pack()
-<<<<<<< HEAD
+b = Button(frame, text="Submit", width=10, command = callback1)
+b.grid(row=22,column=0)
 
 master.mainloop()
-=======
-'''
-master.mainloop()
->>>>>>> c5a7278b5575ff5991507537202d0aa9503ab278
+
+
+
