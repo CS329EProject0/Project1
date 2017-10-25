@@ -5,7 +5,7 @@ from tkinter import *
 # Code to add widgets will go here...
 master = tkinter.Tk()
 # scroll bar, should fix for 3rd release
-'''
+
 scrollbar = Scrollbar(master)
 scrollbar.pack(side=RIGHT, fill=Y)
 listbox = Listbox(master, yscrollcommand=scrollbar.set)
@@ -13,7 +13,7 @@ listbox = Listbox(master, yscrollcommand=scrollbar.set)
 listbox.pack()
 
 scrollbar.config(command=listbox.yview)
-'''
+
 # add entry box for name
 nameText=StringVar()
 nameText.set("Please enter your name")
