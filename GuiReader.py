@@ -39,7 +39,9 @@ nameLabel.pack()
 
 '''
 Label(frame,text="Please enter your name").grid(row=1,column=0)
-Label(frame,text="On average, what time do you sleep?").grid(row=2,column=0)
+nameBox = Entry(master)
+nameBox.grid(row=2, column=1)
+Label(frame,text="On average, what time do you sleep?").grid(row=3,column=0)
 '''
 
 nameBox = Entry(master)
