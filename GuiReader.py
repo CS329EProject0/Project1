@@ -1,5 +1,6 @@
 import tkinter
 from tkinter import *
+from tkinter import Message
 
 # scroll bar magic, don't touch
 class GUI():
@@ -146,21 +147,58 @@ class GUI():
 
 	# append the results to the people database and kill the GUI
 	def callback1(self):
-		'''
-		result = str(self.firstNameBox.get())+" "+str(self.lastNameBox.get())+" " + str(self.cleanBox.get())+" "+str(self.guestBox.get())+" "\
-				 +str(self.soundBox.get())+ " "+str(self.smokeVal.get())+" "+str(self.drinkVal.get())+" "+str(self.studyLocVal.get())+" "\
-		 		 + str(self.genderVal.get()) + " " + str(self.genderPrefVal.get())+" "+str(self.studyHrsBox.get())+" "+str(self.tvHrsBox.get())+" "\
-		 		 +str(self.allNightBox.get())+" "+str(self.sleepBox.get())+" "+str(self.wakeBox.get())
 
-		 '''
+		# create a list of each piece of data for easier error checking,
+		# also so that the data is organized according to the format read by sortRoommates.py
+		dataList = [self.firstNameBox.get(), self.lastNameBox.get(), self.sleepBox.get(), self.wakeBox.get(), self.smokeVal.get(), self.drinkVal.get(),   \
+		self.studyLocVal.get(), self.studyHrsBox.get(), self.tvHrsBox.get(), self.allNightBox.get(), self.genderVal.get(), self.genderPrefVal.get(), self.cleanBox.get(), self.soundBox.get(), \
+		self.guestBox.get()]
 
-		result = str(self.firstNameBox.get())
+		# initialize 3 different error variables
+		spaceInBox = False
+		emptyBox = False
+		unselectedRadioButton = False
 
-		infile = open("Roommates.txt","a")
-		infile.write(result)
-		infile.close()
+		# ensure each piece of data conforms to appropriate format
+		for data in dataList:
+			if ' ' in data:
+				spaceInBox = True
+				break
+			if data == '':
+				emptyBox = True
+				break
+			if data == "N/A":
+				unselectedRadioButton = True
+				break
 
-		self.master.quit()
+		# initialize the error string
+			errorString = "One or more of your inputs is invalid."
+
+		# check if any of the errors occured, and customize and return the error message
+		if spaceInBox or emptyBox or unselectedRadioButton:
+			if spaceInBox:
+				errorString += " Make sure there aren't any spaces in the text fields."
+			if emptyBox:
+				errorString += " Make sure you've filled in each input field."
+			if unselectedRadioButton:
+				errorString += " Double check that a button is selected in each field."
+
+			messagebox.showerror("Error", errorString)
+
+		# if no errors occurred, add the user to the database and kill the program
+		else:
+			result = '\n'
+			for data in dataList:
+				result += data + ' '
+			result = result[:-1]
+
+			print (result)
+
+			infile = open("Roommates.txt","a")
+			infile.write(result)
+			infile.close()
+
+			self.master.destroy()
 
 
 	def myfunction(self, event):
