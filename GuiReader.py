@@ -65,37 +65,77 @@ smokeValYes.grid(row=12,column=0)
 smokeValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
 smokeValNo.grid(row=13,column=0)
 
+# add entry box for drinking
+Label(frame,text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0)
+
+drinkVal = StringVar()
+drinkVal.set("N/A")
+
+drinkValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'Y')
+drinkValYes.grid(row=15,column=0)
+drinkValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
+drinkValNo.grid(row=16,column=0)
+
+# add entry box for study habits
+Label(frame,text="Do you study at home? \n(Y or N):").grid(row=17,column=0)
+
+studyVal = StringVar()
+studyVal.set("N/A")
+
+studyLocValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'Y')
+studyLocValYes.grid(row=18,column=0)
+studyLocValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
+studyLocValNo.grid(row=19,column=0)
+
 # add entry box for gender
-Label(frame,text="Do you identify as  male or female or N/A? \n(M, F): ").grid(row=14,column=0)
+Label(frame,text="Do you identify as  male or female or N/A? \n(M, F): ").grid(row=20,column=0)
 
 genderVal = StringVar()
 genderVal.set("N/A")
 
 genderValFemale = Radiobutton(frame, text ="Female", variable = genderVal, value = 'F')
-genderValFemale.grid(row=15,column=0)
+genderValFemale.grid(row=21,column=0)
 genderValMale = Radiobutton(frame, text ="Male", variable = genderVal, value = 'M')
-genderValMale.grid(row=16,column=0)
+genderValMale.grid(row=22,column=0)
 
 # add entry box for gender preference
-Label(frame,text="Do you prefer to room with a male or female? \n(M, F): ").grid(row=17,column=0)
+Label(frame,text="Do you prefer to room with a male or female? \n(M, F): ").grid(row=23,column=0)
 
 genderPrefVal = StringVar()
 genderPrefVal.set("N/A")
 
 genderPrefValFemale = Radiobutton(frame, text ="Female", variable = genderPrefVal, value = 'F')
-genderPrefValFemale.grid(row=18,column=0)
+genderPrefValFemale.grid(row=24,column=0)
 genderPrefValMale = Radiobutton(frame, text ="Male", variable = genderPrefVal, value = 'M')
-genderPrefValMale.grid(row=19,column=0)
+genderPrefValMale.grid(row=25,column=0)
+
+# add entry box for studyHours
+Label(frame,text="\nOn average, how many hours do you study a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=26,column=0)
+
+studyHrsBox = Entry(frame)
+studyHrsBox.grid(row=27,column=0)
+
+# ass entry box for tvHours
+Label(frame,text="\nOn average, how many hours do you study a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=28,column=0)
+
+tvHrsBox = Entry(frame)
+tvHrsBox.grid(row=29,column=0)
+
+# add entry box for allNighters
+Label(frame,text="\nHow often do you pull all nighters \n(1 = Never, 2 = Sometimes, 3 = Often): ").grid(row=30,column=0)
+
+tvHrsBox = Entry(frame)
+tvHrsBox.grid(row=31,column=0)
 
 # add entry box for sleepTime
-Label(frame,text="\nOn average, what time do you go to sleep? \n(1 = before 10pm, 2 = 10pm-12am, 3 = after 12am): ").grid(row=20,column=0)
+Label(frame,text="\nOn average, what time do you go to sleep? \n(1 = before 10pm, 2 = 10pm-12am, 3 = after 12am): ").grid(row=32,column=0)
 sleepBox = Entry(frame)
-sleepBox.grid(row=21,column=0)
+sleepBox.grid(row=33,column=0)
 
 # add entry box for wakeTime
-Label(frame,text="\nOn average, what time do you wake up? \n(1 = before 7am, 2 = 7am-9am, 3 = after 9am: ").grid(row=22,column=0)
+Label(frame,text="\nOn average, what time do you wake up? \n(1 = before 7am, 2 = 7am-9am, 3 = after 9am: ").grid(row=34,column=0)
 wakeBox = Entry(frame)
-wakeBox.grid(row=23,column=0)
+wakeBox.grid(row=35,column=0)
 
 # get all the results
 def callback1():
