@@ -144,11 +144,12 @@ def callback1():
              + str(genderVal.get()) + " " + str(genderPrefVal.get())+" "+str(studyHrsBox.get())+" "+str(tvHrsBox.get())+" "\
              +str(allNightBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())
     print(result)
-    
+
+    master.mainloop()
+
 b = Button(frame, text="Submit", width=10, command = callback1)
 b.grid(row=36,column=0)
 
-master.mainloop()
 
 
 
