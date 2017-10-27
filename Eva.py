@@ -19,6 +19,18 @@ class people:
         smokingExpectation = ["S","N"]
         self.smokeVal = random.choice(smokingExpectation)
 
+        drinkingExpectation = ["D","N"]
+        self.drinkVal = random.choice(drinkingExpectation)
+
+        studyLocation = ["Y","N"]
+        self.studyLocVal = random.choice(studyLocation)
+
+        self.studyHrsBox = random.randint(1,3)
+
+        self.tvHrsBox = random.randint(1,3)
+
+        self.allNightBox = random.randint(1,3)
+
         genderExpectation = ["F","M"]
         self.genderVal = random.choice(genderExpectation)
 
@@ -44,9 +56,7 @@ class people:
         
     # turn the characeristic to a string
     def __str__(self):
-        result = ""
-        result += (self.firstName+' '+self.lastName+' '+str(self.sleepVal)+' '+str(self.wakeVal)+' '+self.smokeVal+' '+self.genderVal+' '+self.gPreferVal+' '+str(self.cleanVal)+' '+str(self.guestsVal)+' '+str(self.soundVal) + '\n')
-        return result
+        result = (self.firstName+' '+self.lastName+' '+str(self.sleepVal)+' '+str(self.wakeVal)+' '+self.smokeVal+" "+self.drinkVal+" "+self.studyLocVal+" "+str(self.studyHrsBox)+" "+str(self.tvHrsBox)+" " +str(self.allNightBox)+" "+self.genderVal+' '+self.gPreferVal+' '+str(self.cleanVal)+' '+str(self.guestsVal)+' '+str(self.soundVal) + '\n')
 
 
 # the main function, you can enter an arbitrary number
