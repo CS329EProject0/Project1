@@ -71,20 +71,20 @@ Label(frame,text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0
 drinkVal = StringVar()
 drinkVal.set("N/A")
 
-drinkValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'Y')
+drinkValYes = Radiobutton(frame, text ="Yes", variable = drinkVal, value = 'Y')
 drinkValYes.grid(row=15,column=0)
-drinkValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
+drinkValNo = Radiobutton(frame, text ="No", variable = drinkVal, value = 'N')
 drinkValNo.grid(row=16,column=0)
 
 # add entry box for study habits
 Label(frame,text="Do you study at home? \n(Y or N):").grid(row=17,column=0)
 
-studyVal = StringVar()
-studyVal.set("N/A")
+studyLocVal = StringVar()
+studyLocVal.set("N/A")
 
-studyLocValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'Y')
+studyLocValYes = Radiobutton(frame, text ="Yes", variable = studyLocVal, value = 'Y')
 studyLocValYes.grid(row=18,column=0)
-studyLocValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
+studyLocValNo = Radiobutton(frame, text ="No", variable = studyLocVal, value = 'N')
 studyLocValNo.grid(row=19,column=0)
 
 # add entry box for gender
@@ -116,7 +116,7 @@ studyHrsBox = Entry(frame)
 studyHrsBox.grid(row=27,column=0)
 
 # ass entry box for tvHours
-Label(frame,text="\nOn average, how many hours do you study a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=28,column=0)
+Label(frame,text="\nOn average, how many hours do you watch tv a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=28,column=0)
 
 tvHrsBox = Entry(frame)
 tvHrsBox.grid(row=29,column=0)
@@ -124,8 +124,8 @@ tvHrsBox.grid(row=29,column=0)
 # add entry box for allNighters
 Label(frame,text="\nHow often do you pull all nighters \n(1 = Never, 2 = Sometimes, 3 = Often): ").grid(row=30,column=0)
 
-tvHrsBox = Entry(frame)
-tvHrsBox.grid(row=31,column=0)
+allNightBox = Entry(frame)
+allNightBox.grid(row=31,column=0)
 
 # add entry box for sleepTime
 Label(frame,text="\nOn average, what time do you go to sleep? \n(1 = before 10pm, 2 = 10pm-12am, 3 = after 12am): ").grid(row=32,column=0)
@@ -140,7 +140,9 @@ wakeBox.grid(row=35,column=0)
 # get all the results
 def callback1():
     result = str(firstNameBox.get())+" "+str(lastNameBox.get())+" " + str(cleanBox.get())+" "+str(guestBox.get())+" "\
-             +str(soundBox.get())+ " "+str(smokeVal.get())+" " + str(genderVal.get()) + " " + str(genderPrefVal.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())
+             +str(soundBox.get())+ " "+str(smokeVal.get())+" "+str(drinkVal.get())+" "+str(studyLocVal.get())+" "\
+             + str(genderVal.get()) + " " + str(genderPrefVal.get())+" "+str(studyHrsBox.get())+" "+str(tvHrsBox.get())+" "\
+             +str(allNightBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())
     print(result)
     
 b = Button(frame, text="Submit", width=10, command = callback1)
