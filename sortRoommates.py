@@ -172,8 +172,7 @@ def main():
 		# import the gui file
 		import GuiReader
 		from GuiReader import GUI
-		root = Tk()
-		displayGUI = GUI(root)
+
 		# initialize roommate database
 		roommateList = People()
 		infile = open("Roommates.txt", "r")
@@ -190,18 +189,30 @@ def main():
 
 		# run a while loop that allows continous searches through the database
 		# unless user ends program
-		while not end:
-			run = str(input('\nWould you like to search for roommate matches? \n(Y or N): '))
-			while run not in yesCheck and run not in noCheck:
-				print ('\nInput not recognized.')
-				run = str(input('Would you like to search for roommate matches? \n(Y or N): '))
-			if run in yesCheck:
-				print ('run mainloop')
-				root.mainloop()
+		
+		run = str(input('Would you like to search for roommate matches? \n(Y or N): '))
+		while run not in yesCheck and run not in noCheck:
+			print ('\nInput not recognized.')
+			run = str(input('Would you like to search for roommate matches? \n(Y or N): '))
+		if run in yesCheck:
+			root = tkinter.Tk()
+			displayGUI = GUI(root)
+			root.mainloop()
+		else:
+			end = True
 
-			endCheck = str(input('\nWould you like to search the database again? \n(Y or N): '))
+		while not end:
+			endCheck = str(input('\nWould you like to search for roommate matches for another user? \n(Y or N): '))
+			while endCheck not in yesCheck and endCheck not in noCheck:
+				print ('\nInput not recognized.')
+				endCheck = str(input('\nWould you like to search for more matches for another user? \n(Y or N): '))
 			if endCheck in noCheck:
 				end = True
+			else:
+				root = tkinter.Tk()
+				displayGUI = GUI(root)
+				root.mainloop()
+
 
 		# close the text in-file
 		infile.close()
