@@ -8,6 +8,7 @@ class MyFirstGUI:
         self.label = Label(master, text="On a scale of 1 to 5, how clean are you? \n(1= not clean, 5 = very clean): ")
         self.label.pack()
 
+        '''
         self.one_button = Button(master, text="1", command=self.assign1)
         self.one_button.pack()
         self.two_button = Button(master, text="2", command=self.assign2)
@@ -80,7 +81,8 @@ class MyFirstGUI:
         self.two_button.pack()
         self.three_button = Button(master, text="3", command=self.assign3)
         self.three_button.pack()
-
+        '''
+        
         self.label = Label(master, text="On average, what time do you wake up? \n(1 = before 10pm, 2 = 10pm-12am, 3 = after 12am): ")
         self.label.pack()
 
@@ -113,6 +115,10 @@ class MyFirstGUI:
     def assignN(self):
         print('N', end=' ')
 
+
+
+'''
 root = Tk()
 my_gui = MyFirstGUI(root)
 root.mainloop()
+'''
