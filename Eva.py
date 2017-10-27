@@ -16,10 +16,10 @@ class people:
 		
 		self.wakeVal = random.randint(1,3)
 		
-		smokingExpectation = ["S","N"]
+		smokingExpectation = ["Y","N"]
 		self.smokeVal = random.choice(smokingExpectation)
 
-		drinkingExpectation = ["D","N"]
+		drinkingExpectation = ["Y","N"]
 		self.drinkVal = random.choice(drinkingExpectation)
 
 		studyLocation = ["Y","N"]

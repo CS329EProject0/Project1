@@ -160,19 +160,19 @@ class GUI():
 		unselectedRadioButton = False
 
 		# ensure each piece of data conforms to appropriate format
-		for data in dataList:
-			if ' ' in data:
-				spaceInBox = True
-				break
+		for data in dataList:			
 			if data == '':
 				emptyBox = True
+				break
+			if ' ' in data:
+				spaceInBox = True
 				break
 			if data == "N/A":
 				unselectedRadioButton = True
 				break
 
 		# initialize the error string
-			errorString = "One or more of your inputs is invalid."
+		errorString = "One or more of your inputs is invalid."
 
 		# check if any of the errors occured, and customize and return the error message
 		if spaceInBox or emptyBox or unselectedRadioButton:
@@ -183,7 +183,9 @@ class GUI():
 			if unselectedRadioButton:
 				errorString += " Double check that a button is selected in each field."
 
-			messagebox.showerror("Error", errorString)
+			# figure out how to display popups, for now just print the error
+			# message.showerror("Error", errorString)
+			print (errorString)
 
 		# if no errors occurred, add the user to the database and kill the program
 		else:
