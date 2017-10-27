@@ -150,6 +150,7 @@ def callback1():
 b = Button(frame, text="Submit", width=10, command = callback1)
 b.grid(row=36,column=0)
 
+
 master.mainloop()
 
 
