@@ -60,7 +60,7 @@ Label(frame,text="Are you okay with somking? \n(Y or N):").grid(row=11,column=0)
 smokeVal = StringVar()
 smokeVal.set("N/A")
 
-smokeValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'Y')
+smokeValYes = Radiobutton(frame, text ="Yes", variable = smokeVal, value = 'S')
 smokeValYes.grid(row=12,column=0)
 smokeValNo = Radiobutton(frame, text ="No", variable = smokeVal, value = 'N')
 smokeValNo.grid(row=13,column=0)
@@ -71,7 +71,7 @@ Label(frame,text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0
 drinkVal = StringVar()
 drinkVal.set("N/A")
 
-drinkValYes = Radiobutton(frame, text ="Yes", variable = drinkVal, value = 'Y')
+drinkValYes = Radiobutton(frame, text ="Yes", variable = drinkVal, value = 'D')
 drinkValYes.grid(row=15,column=0)
 drinkValNo = Radiobutton(frame, text ="No", variable = drinkVal, value = 'N')
 drinkValNo.grid(row=16,column=0)
@@ -139,10 +139,11 @@ wakeBox.grid(row=35,column=0)
 
 # get all the results
 def callback1():
-    result = str(firstNameBox.get())+" "+str(lastNameBox.get())+" " + str(cleanBox.get())+" "+str(guestBox.get())+" "\
-             +str(soundBox.get())+ " "+str(smokeVal.get())+" "+str(drinkVal.get())+" "+str(studyLocVal.get())+" "\
-             + str(genderVal.get()) + " " + str(genderPrefVal.get())+" "+str(studyHrsBox.get())+" "+str(tvHrsBox.get())+" "\
-             +str(allNightBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())
+    result = str(firstNameBox.get())+" "+str(lastNameBox.get())+" "+str(sleepBox.get())+" "+str(wakeBox.get())+" "\
+             +str(smokeVal.get())+" "+str(drinkVal.get())+" "+str(studyLocVal.get())+" "\
+             +str(studyHrsBox.get())+ " "+str(tvHrsBox.get())+" "+str(allNightBox.get())+" "+str(genderVal.get()) + " " + str(genderPrefVal.get())\
+             + " "+ str(cleanBox.get())+" "+str(guestBox.get())+" " +str(soundBox.get())
+             
     print(result)
 
 
