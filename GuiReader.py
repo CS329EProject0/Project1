@@ -1,6 +1,6 @@
 import tkinter
 from tkinter import *
-from tkinter import Message
+from tkinter import messagebox
 
 # scroll bar magic, don't touch
 class GUI():
@@ -166,7 +166,7 @@ class GUI():
 
 
 		b = Button(frame, bg = "misty rose",text="Submit", width=10, command = self.callback)
-		b.grid(row=36,column=0)
+		b.grid(row=36,column=0, pady = 20)
 
 
 	def callback(self):
@@ -241,31 +241,32 @@ class GUI():
 
 
 		# initialize the error string
-		errorString = "One or more of your inputs is invalid."
+		errorString = ""
+		errorTitle = "One or more of your inputs is invalid."
 
 		# check if any of the errors occured, and customize and return the error message
 		if spaceInBox or emptyBox or unselectedRadioButton or nameError or textBoxNumericError or numNotInRangeError:
 			if spaceInBox:
-				errorString += " Make sure there aren't any spaces in the text fields."
+				errorString += "Make sure there aren't any spaces in the text fields."
 
 			if emptyBox:
-				errorString += " Make sure you've filled in each input field."
+				errorString += "Make sure you've filled in each input field."
 
 			if unselectedRadioButton:
-				errorString += " Double check that a button is selected in each field."
+				errorString += "Double check that a button is selected in each field."
 
 			if nameError:
-				errorString += " Only enter letters into the name entry boxes."
+				errorString += "Only enter letters into the name entry boxes."
 
 			if textBoxNumericError:
-				errorString += " Ensure that you only entered integers in the text boxes."
+				errorString += "Ensure that you only entered integers in the text boxes."
 
 			if numNotInRangeError:
-				errorString += " Be sure to only enter integers within the specified range."
+				errorString += "Be sure to only enter integers within the specified range."
 
 			# figure out how to display popups, for now just print the error
 			# message.showerror("Error", errorString)
-			print (errorString)
+			messagebox.showerror(errorTitle, errorString)
 
 		# if no errors occurred, add the user to the database and kill the program
 		else:
