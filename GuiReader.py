@@ -82,9 +82,9 @@ class GUI():
 		self.smokeVal = StringVar()
 		self.smokeVal.set("N/A")
 
-		self.smokeValYes = Radiobutton(frame, text ="Yes", variable = self.smokeVal, value = 'Y')
+		self.smokeValYes = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Yes", variable = self.smokeVal, value = 'Y')
 		self.smokeValYes.grid(row=12,column=0)
-		self.smokeValNo = Radiobutton(frame, text ="No", variable = self.smokeVal, value = 'N')
+		self.smokeValNo = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="No", variable = self.smokeVal, value = 'N')
 		self.smokeValNo.grid(row=13,column=0)
 
 		# add entry box for drinking
@@ -94,9 +94,9 @@ class GUI():
 		self.drinkVal = StringVar()
 		self.drinkVal.set("N/A")
 
-		self.drinkValYes = Radiobutton(frame, text ="Yes", variable = self.drinkVal, value = 'Y')
+		self.drinkValYes = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Yes", variable = self.drinkVal, value = 'Y')
 		self.drinkValYes.grid(row=15,column=0)
-		self.drinkValNo = Radiobutton(frame, text ="No", variable = self.drinkVal, value = 'N')
+		self.drinkValNo = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="No", variable = self.drinkVal, value = 'N')
 		self.drinkValNo.grid(row=16,column=0)
 
 		# add entry box for study habits
@@ -106,9 +106,9 @@ class GUI():
 		self.studyLocVal = StringVar()
 		self.studyLocVal.set("N/A")
 
-		self.studyLocValYes = Radiobutton(frame, text ="Yes", variable = self.studyLocVal, value = 'Y')
+		self.studyLocValYes = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Yes", variable = self.studyLocVal, value = 'Y')
 		self.studyLocValYes.grid(row=18,column=0)
-		self.studyLocValNo = Radiobutton(frame, text ="No", variable = self.studyLocVal, value = 'N')
+		self.studyLocValNo = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="No", variable = self.studyLocVal, value = 'N')
 		self.studyLocValNo.grid(row=19,column=0)
 
 		# add entry box for gender
@@ -117,9 +117,9 @@ class GUI():
 		self.genderVal = StringVar()
 		self.genderVal.set("N/A")
 
-		self.genderValFemale = Radiobutton(frame, text ="Female", variable = self.genderVal, value = 'F')
+		self.genderValFemale = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Female", variable = self.genderVal, value = 'F')
 		self.genderValFemale.grid(row=21,column=0)
-		self.genderValMale = Radiobutton(frame, text ="Male", variable = self.genderVal, value = 'M')
+		self.genderValMale = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Male", variable = self.genderVal, value = 'M')
 		self.genderValMale.grid(row=22,column=0)
 
 		# add entry box for gender preference
@@ -128,9 +128,9 @@ class GUI():
 		self.genderPrefVal = StringVar()
 		self.genderPrefVal.set("N/A")
 
-		self.genderPrefValFemale = Radiobutton(frame, text ="Female", variable = self.genderPrefVal, value = 'F')
+		self.genderPrefValFemale = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Female", variable = self.genderPrefVal, value = 'F')
 		self.genderPrefValFemale.grid(row=24,column=0)
-		self.genderPrefValMale = Radiobutton(frame, text ="Male", variable = self.genderPrefVal, value = 'M')
+		self.genderPrefValMale = Radiobutton(frame, fg = textColor, bg = backgroundColor, text ="Male", variable = self.genderPrefVal, value = 'M')
 		self.genderPrefValMale.grid(row=25,column=0)
 
 
