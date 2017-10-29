@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import *
 from tkinter import messagebox
+# for some reason I have to explicitly import messagebox although "*" should import all
 
 # scroll bar magic, don't touch
 class GUI():
@@ -34,11 +35,13 @@ class GUI():
 		# complete scrollbar magic
 
 		# color design for GUI
-		backgroundColor = "floral white"
+		backgroundColor = "old lace"
 		textColor = "#662E1C"
+		buttonColor = "bisque"
+
 		# add frame color
-		self.canvas.configure(bg='floral white')
-		frame.configure(bg='floral white')
+		self.canvas.configure(bg=backgroundColor)
+		frame.configure(bg=backgroundColor)
 
 		
 		# Code to add widgets 
@@ -165,7 +168,7 @@ class GUI():
 		self.wakeBox.grid(row=35,column=0)
 
 
-		b = Button(frame, bg = "misty rose",text="Submit", width=10, command = self.callback)
+		b = Button(frame, bg = buttonColor,text="Submit", width=10, command = self.callback)
 		b.grid(row=36,column=0, pady = 20)
 
 
