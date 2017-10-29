@@ -9,6 +9,9 @@ class GUI():
 
 		self.master.title('Please answer the following questions.')
 
+		# add backgroud color
+		master.configure(bg='antique white')
+
 		# scroll bar magic, don't touch
 		sizex = 540
 		sizey = 500
@@ -31,34 +34,39 @@ class GUI():
 
 		# complete scrollbar magic
 
+		# add frame color
+		self.canvas.configure(bg='floral white')
+		frame.configure(bg='floral white')
+
 		# Code to add widgets 
 		# add entry box for first name
-		Label(frame,text="Please enter your first name").grid(row=1,column=0)
+		# added some color in fg and bg term of each label
+		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your first name").grid(row=1,column=0)
 		self.firstNameBox = Entry(frame)
 		self.firstNameBox.grid(row=2,column=0)
 
 		# add entry box for last name
-		Label(frame,text="Please enter your last name").grid(row=3,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your last name").grid(row=3,column=0)
 		self.lastNameBox = Entry(frame)
 		self.lastNameBox.grid(row=4,column=0)
 
 		# add entry box for Cleaness
-		Label(frame,text="On a scale of 1 to 5, how clean are you? \n(1= not clean, 5 = very clean): ").grid(row=5,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how clean are you? \n(1= not clean, 5 = very clean): ").grid(row=5,column=0)
 		self.cleanBox = Entry(frame)
 		self.cleanBox.grid(row=6,column=0)
 
 		# add entry box for guests
-		Label(frame,text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = not comfortable, 5 = very comfortable): ").grid(row=7,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = not comfortable, 5 = very comfortable): ").grid(row=7,column=0)
 		self.guestBox = Entry(frame)
 		self.guestBox.grid(row=8,column=0)
 
 		# add entry box for sound
-		Label(frame,text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = not comfortable, 5 = very comfortable): ").grid(row=9,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = not comfortable, 5 = very comfortable): ").grid(row=9,column=0)
 		self.soundBox = Entry(frame)
 		self.soundBox.grid(row=10,column=0)
 
 		# add entry box for smoke
-		Label(frame,text="Are you okay with somking? \n(Y or N):").grid(row=11,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="Are you okay with somking? \n(Y or N):").grid(row=11,column=0)
 
 		self.smokeVal = StringVar()
 		self.smokeVal.set("N/A")
@@ -69,7 +77,7 @@ class GUI():
 		self.smokeValNo.grid(row=13,column=0)
 
 		# add entry box for drinking
-		Label(frame,text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0)
 
 		self.drinkVal = StringVar()
 		self.drinkVal.set("N/A")
@@ -80,7 +88,7 @@ class GUI():
 		self.drinkValNo.grid(row=16,column=0)
 
 		# add entry box for study habits
-		Label(frame,text="Do you study at home? \n(Y or N):").grid(row=17,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="Do you study at home? \n(Y or N):").grid(row=17,column=0)
 
 		self.studyLocVal = StringVar()
 		self.studyLocVal.set("N/A")
@@ -91,7 +99,7 @@ class GUI():
 		self.studyLocValNo.grid(row=19,column=0)
 
 		# add entry box for gender
-		Label(frame,text="Do you identify as  male or female or N/A? \n(M, F): ").grid(row=20,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="Do you identify as  male or female or N/A? \n(M, F): ").grid(row=20,column=0)
 
 		self.genderVal = StringVar()
 		self.genderVal.set("N/A")
@@ -102,7 +110,7 @@ class GUI():
 		self.genderValMale.grid(row=22,column=0)
 
 		# add entry box for gender preference
-		Label(frame,text="Do you prefer to room with a male or female? \n(M, F): ").grid(row=23,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="Do you prefer to room with a male or female? \n(M, F): ").grid(row=23,column=0)
 
 		self.genderPrefVal = StringVar()
 		self.genderPrefVal.set("N/A")
@@ -113,35 +121,35 @@ class GUI():
 		self.genderPrefValMale.grid(row=25,column=0)
 
 		# add entry box for studyHours
-		Label(frame,text="\nOn average, how many hours do you study a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=26,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On average, how many hours do you study a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=26,column=0)
 
 		self.studyHrsBox = Entry(frame)
 		self.studyHrsBox.grid(row=27,column=0)
 
 		# ass entry box for tvHours
-		Label(frame,text="\nOn average, how many hours do you watch tv a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=28,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On average, how many hours do you watch tv a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=28,column=0)
 
 		self.tvHrsBox = Entry(frame)
 		self.tvHrsBox.grid(row=29,column=0)
 
 		# add entry box for allNighters
-		Label(frame,text="\nHow often do you pull all nighters \n(1 = Never, 2 = Sometimes, 3 = Often): ").grid(row=30,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="How often do you pull all nighters \n(1 = Never, 2 = Sometimes, 3 = Often): ").grid(row=30,column=0)
 
 		self.allNightBox = Entry(frame)
 		self.allNightBox.grid(row=31,column=0)
 
 		# add entry box for sleepTime
-		Label(frame,text="\nOn average, what time do you go to sleep? \n(1 = before 10pm, 2 = 10pm-12am, 3 = after 12am): ").grid(row=32,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On average, what time do you go to sleep? \n(1 = before 10pm, 2 = 10pm-12am, 3 = after 12am): ").grid(row=32,column=0)
 		self.sleepBox = Entry(frame)
 		self.sleepBox.grid(row=33,column=0)
 
 		# add entry box for wakeTime
-		Label(frame,text="\nOn average, what time do you wake up? \n(1 = before 7am, 2 = 7am-9am, 3 = after 9am: ").grid(row=34,column=0)
+		Label(frame,fg = "brown4",bg = "floral white",text="On average, what time do you wake up? \n(1 = before 7am, 2 = 7am-9am, 3 = after 9am: ").grid(row=34,column=0)
 		self.wakeBox = Entry(frame)
 		self.wakeBox.grid(row=35,column=0)
 
 
-		b = Button(frame, text="Submit", width=10, command = self.callback1)
+		b = Button(frame, bg = "misty rose",text="Submit", width=10, command = self.callback1)
 		b.grid(row=36,column=0)
 
 
