@@ -7,13 +7,13 @@ class GUI():
 	def __init__(self, master):
 		self.master = master
 
-		self.master.title('Please answer the following questions.')
+		self.master.title('The Roommate Guru')
 
 		# add backgroud color
 		master.configure(bg='antique white')
 
 		# scroll bar magic, don't touch
-		sizex = 540
+		sizex = 440
 		sizey = 500
 		posx  = 100
 		posy  = 100
@@ -31,7 +31,6 @@ class GUI():
 		self.canvas.pack(side="left")
 		self.canvas.create_window((0,0),window=frame,anchor='nw')
 		frame.bind("<Configure>", self.myfunction)
-
 		# complete scrollbar magic
 
 		# add frame color
@@ -40,33 +39,61 @@ class GUI():
 
 		# Code to add widgets 
 		# add entry box for first name
+<<<<<<< HEAD
 		# added some color in fg and bg term of each label
 		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your first name").grid(row=1,column=0)
+=======
+		Label(frame,text="Please enter your first name:").grid(row=1,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 		self.firstNameBox = Entry(frame)
 		self.firstNameBox.grid(row=2,column=0)
 
 		# add entry box for last name
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your last name").grid(row=3,column=0)
+=======
+		Label(frame,text="Please enter your last name:").grid(row=3,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 		self.lastNameBox = Entry(frame)
 		self.lastNameBox.grid(row=4,column=0)
 
+
+		# START: qualitative textbox entry questions
 		# add entry box for Cleaness
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how clean are you? \n(1= not clean, 5 = very clean): ").grid(row=5,column=0)
+=======
+		Label(frame,text="On a scale of 1 to 5, how clean are you? \n(1= I can't see the floor.  5 = OCD) ").grid(row=5,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 		self.cleanBox = Entry(frame)
 		self.cleanBox.grid(row=6,column=0)
 
 		# add entry box for guests
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = not comfortable, 5 = very comfortable): ").grid(row=7,column=0)
+=======
+		Label(frame,text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = People? No thanks.  5 = Partayy!) ").grid(row=7,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 		self.guestBox = Entry(frame)
 		self.guestBox.grid(row=8,column=0)
 
 		# add entry box for sound
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = not comfortable, 5 = very comfortable): ").grid(row=9,column=0)
+=======
+		Label(frame,text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = It's better if we just don't talk.  5 = I'm pretty much in a band.").grid(row=9,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 		self.soundBox = Entry(frame)
 		self.soundBox.grid(row=10,column=0)
 
+
+		# START: radiobutton questions
 		# add entry box for smoke
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="Are you okay with somking? \n(Y or N):").grid(row=11,column=0)
+=======
+		Label(frame,text="Are you okay with smoking?").grid(row=11,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 		self.smokeVal = StringVar()
 		self.smokeVal.set("N/A")
@@ -77,7 +104,11 @@ class GUI():
 		self.smokeValNo.grid(row=13,column=0)
 
 		# add entry box for drinking
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0)
+=======
+		Label(frame,text="Are you okay with drinking?").grid(row=14,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 		self.drinkVal = StringVar()
 		self.drinkVal.set("N/A")
@@ -88,7 +119,11 @@ class GUI():
 		self.drinkValNo.grid(row=16,column=0)
 
 		# add entry box for study habits
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="Do you study at home? \n(Y or N):").grid(row=17,column=0)
+=======
+		Label(frame,text="Do you study at home?").grid(row=17,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 		self.studyLocVal = StringVar()
 		self.studyLocVal.set("N/A")
@@ -99,7 +134,11 @@ class GUI():
 		self.studyLocValNo.grid(row=19,column=0)
 
 		# add entry box for gender
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="Do you identify as  male or female or N/A? \n(M, F): ").grid(row=20,column=0)
+=======
+		Label(frame,text="Do you identify as  male or female?").grid(row=20,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 		self.genderVal = StringVar()
 		self.genderVal.set("N/A")
@@ -110,7 +149,11 @@ class GUI():
 		self.genderValMale.grid(row=22,column=0)
 
 		# add entry box for gender preference
+<<<<<<< HEAD
 		Label(frame,fg = "brown4",bg = "floral white",text="Do you prefer to room with a male or female? \n(M, F): ").grid(row=23,column=0)
+=======
+		Label(frame,text="Do you prefer to room with a male or female?").grid(row=23,column=0)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 		self.genderPrefVal = StringVar()
 		self.genderPrefVal.set("N/A")
@@ -119,6 +162,9 @@ class GUI():
 		self.genderPrefValFemale.grid(row=24,column=0)
 		self.genderPrefValMale = Radiobutton(frame, text ="Male", variable = self.genderPrefVal, value = 'M')
 		self.genderPrefValMale.grid(row=25,column=0)
+
+
+		# START: quantitative textbox questions
 
 		# add entry box for studyHours
 		Label(frame,fg = "brown4",bg = "floral white",text="On average, how many hours do you study a week \n(1 = 0-2 hrs, 2 = 3-6 hrs, 3 = 7+ hrs): ").grid(row=26,column=0)
@@ -149,12 +195,16 @@ class GUI():
 		self.wakeBox.grid(row=35,column=0)
 
 
+<<<<<<< HEAD
 		b = Button(frame, bg = "misty rose",text="Submit", width=10, command = self.callback1)
 		b.grid(row=36,column=0)
+=======
+		b = Button(frame, text="Submit", width=10, command = self.callback)
+		b.grid(row=36,column=0, pady = 20)
+>>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 
-	# append the results to the people database and kill the GUI
-	def callback1(self):
+	def callback(self):
 
 		# create a list of each piece of data for easier error checking,
 		# also so that the data is organized according to the format read by sortRoommates.py
@@ -162,34 +212,91 @@ class GUI():
 		self.studyLocVal.get(), self.studyHrsBox.get(), self.tvHrsBox.get(), self.allNightBox.get(), self.genderVal.get(), self.genderPrefVal.get(), self.cleanBox.get(), self.soundBox.get(), \
 		self.guestBox.get()]
 
+		# the following lists are for error checking when creating the unique error statement below
+		nameIndicies = [0, 1]
+		relativeRangeIndicies = [2, 3, 7, 8, 9]
+		discreteIndicies = [12, 13, 14]
+
 		# initialize 3 different error variables
 		spaceInBox = False
 		emptyBox = False
 		unselectedRadioButton = False
+		nameError = False
+		numNotInRangeError = False
+		textBoxNumericError = False
 
 		# ensure each piece of data conforms to appropriate format
-		for data in dataList:			
-			if data == '':
+		for idx in range (len(dataList)):	
+			# check if a text box is empty		
+			if dataList[idx] == '':
 				emptyBox = True
 				break
-			if ' ' in data:
+
+			# check if there is a space in a text box
+			if ' ' in dataList[idx]:
 				spaceInBox = True
 				break
-			if data == "N/A":
+
+			# check if one of the radiobutton questions returned an invalid response
+			if dataList[idx] == "N/A":
 				unselectedRadioButton = True
 				break
+
+			# check that the name entry boxes contain only letters
+			if idx in nameIndicies:
+				if not dataList[idx].isalpha():
+					nameError = True
+					break
+
+			# check that the text entry boxes are numeric and within the specified range
+			if idx in discreteIndicies:
+				val = (dataList[idx])
+				if val.isnumeric():
+					val = int(val)
+					if val > 0 and val < 6:
+						continue
+					else:
+						numNotInRangeError = True
+						break
+				else:
+					textBoxNumericError = True
+					break
+			if idx in relativeRangeIndicies:
+				val = (dataList[idx])
+				if val.isnumeric():
+					val = int(val)
+					if val > 0 and val < 4:
+						continue
+					else:
+						numNotInRangeError = True
+						break
+				else:
+					textBoxNumericError = True
+					break
+
 
 		# initialize the error string
 		errorString = "One or more of your inputs is invalid."
 
 		# check if any of the errors occured, and customize and return the error message
-		if spaceInBox or emptyBox or unselectedRadioButton:
+		if spaceInBox or emptyBox or unselectedRadioButton or nameError or textBoxNumericError or numNotInRangeError:
 			if spaceInBox:
 				errorString += " Make sure there aren't any spaces in the text fields."
+
 			if emptyBox:
 				errorString += " Make sure you've filled in each input field."
+
 			if unselectedRadioButton:
 				errorString += " Double check that a button is selected in each field."
+
+			if nameError:
+				errorString += " Only enter letters into the name entry boxes."
+
+			if textBoxNumericError:
+				errorString += " Ensure that you only entered integers in the text boxes."
+
+			if numNotInRangeError:
+				errorString += " Be sure to only enter integers within the specified range."
 
 			# figure out how to display popups, for now just print the error
 			# message.showerror("Error", errorString)
@@ -197,19 +304,17 @@ class GUI():
 
 		# if no errors occurred, add the user to the database and kill the program
 		else:
-			result = '\n'
+			result = ''
 			for data in dataList:
 				result += data + ' '
 			result = result[:-1]
 
-			print (result)
-
-			infile = open("Roommates.txt","a")
+			infile = open("newUserTemp.txt","w")
 			infile.write(result)
 			infile.close()
 
 			self.master.destroy()
 
-
+	# configures scrollbar
 	def myfunction(self, event):
-		self.canvas.configure(scrollregion=self.canvas.bbox("all"),width=500,height=500)
+		self.canvas.configure(scrollregion=self.canvas.bbox("all"),width=400,height=500)
