@@ -39,61 +39,43 @@ class GUI():
 
 		# Code to add widgets 
 		# add entry box for first name
-<<<<<<< HEAD
+
 		# added some color in fg and bg term of each label
-		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your first name").grid(row=1,column=0)
-=======
-		Label(frame,text="Please enter your first name:").grid(row=1,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your first name:").grid(row=1,column=0)
+
 		self.firstNameBox = Entry(frame)
 		self.firstNameBox.grid(row=2,column=0)
 
 		# add entry box for last name
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="Please enter your last name").grid(row=3,column=0)
-=======
-		Label(frame,text="Please enter your last name:").grid(row=3,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4",bg = "floral white", text="Please enter your last name:").grid(row=3,column=0)
+
 		self.lastNameBox = Entry(frame)
 		self.lastNameBox.grid(row=4,column=0)
 
 
 		# START: qualitative textbox entry questions
 		# add entry box for Cleaness
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how clean are you? \n(1= not clean, 5 = very clean): ").grid(row=5,column=0)
-=======
-		Label(frame,text="On a scale of 1 to 5, how clean are you? \n(1= I can't see the floor.  5 = OCD) ").grid(row=5,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4",bg = "floral white", text="On a scale of 1 to 5, how clean are you? \n(1= I can't see the floor.  5 = OCD) ").grid(row=5,column=0)
+
 		self.cleanBox = Entry(frame)
 		self.cleanBox.grid(row=6,column=0)
 
 		# add entry box for guests
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = not comfortable, 5 = very comfortable): ").grid(row=7,column=0)
-=======
-		Label(frame,text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = People? No thanks.  5 = Partayy!) ").grid(row=7,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4",bg = "floral white", text="On a scale of 1 to 5, how comfortable are you with guests in the room? \n(1 = People? No thanks.  5 = Partayy!) ").grid(row=7,column=0)
 		self.guestBox = Entry(frame)
 		self.guestBox.grid(row=8,column=0)
 
 		# add entry box for sound
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = not comfortable, 5 = very comfortable): ").grid(row=9,column=0)
-=======
-		Label(frame,text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = It's better if we just don't talk.  5 = I'm pretty much in a band.").grid(row=9,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4", bg = "floral white", text="On a scale of 1 to 5, how comfortable with noise are you?\n(1 = It's better if we just don't talk.  5 = I'm pretty much in a band.").grid(row=9,column=0)
+
 		self.soundBox = Entry(frame)
 		self.soundBox.grid(row=10,column=0)
 
 
 		# START: radiobutton questions
 		# add entry box for smoke
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="Are you okay with somking? \n(Y or N):").grid(row=11,column=0)
-=======
-		Label(frame,text="Are you okay with smoking?").grid(row=11,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4", bg = "floral white", text="Are you okay with smoking?").grid(row=11,column=0)
+
 
 		self.smokeVal = StringVar()
 		self.smokeVal.set("N/A")
@@ -104,11 +86,8 @@ class GUI():
 		self.smokeValNo.grid(row=13,column=0)
 
 		# add entry box for drinking
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="Are you okay with drinking? \n(Y or N):").grid(row=14,column=0)
-=======
-		Label(frame,text="Are you okay with drinking?").grid(row=14,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4", bg = "floral white", text="Are you okay with drinking?").grid(row=14,column=0)
+
 
 		self.drinkVal = StringVar()
 		self.drinkVal.set("N/A")
@@ -119,11 +98,8 @@ class GUI():
 		self.drinkValNo.grid(row=16,column=0)
 
 		# add entry box for study habits
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="Do you study at home? \n(Y or N):").grid(row=17,column=0)
-=======
-		Label(frame,text="Do you study at home?").grid(row=17,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4", bg = "floral white", text="Do you study at home?").grid(row=17,column=0)
+
 
 		self.studyLocVal = StringVar()
 		self.studyLocVal.set("N/A")
@@ -134,11 +110,7 @@ class GUI():
 		self.studyLocValNo.grid(row=19,column=0)
 
 		# add entry box for gender
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="Do you identify as  male or female or N/A? \n(M, F): ").grid(row=20,column=0)
-=======
-		Label(frame,text="Do you identify as  male or female?").grid(row=20,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4", bg = "floral white", text="Do you identify as  male or female?").grid(row=20,column=0)
 
 		self.genderVal = StringVar()
 		self.genderVal.set("N/A")
@@ -149,11 +121,7 @@ class GUI():
 		self.genderValMale.grid(row=22,column=0)
 
 		# add entry box for gender preference
-<<<<<<< HEAD
-		Label(frame,fg = "brown4",bg = "floral white",text="Do you prefer to room with a male or female? \n(M, F): ").grid(row=23,column=0)
-=======
-		Label(frame,text="Do you prefer to room with a male or female?").grid(row=23,column=0)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
+		Label(frame,fg = "brown4", bg = "floral white", text="Do you prefer to room with a male or female?").grid(row=23,column=0)
 
 		self.genderPrefVal = StringVar()
 		self.genderPrefVal.set("N/A")
@@ -195,13 +163,8 @@ class GUI():
 		self.wakeBox.grid(row=35,column=0)
 
 
-<<<<<<< HEAD
-		b = Button(frame, bg = "misty rose",text="Submit", width=10, command = self.callback1)
+		b = Button(frame, bg = "misty rose",text="Submit", width=10, command = self.callback)
 		b.grid(row=36,column=0)
-=======
-		b = Button(frame, text="Submit", width=10, command = self.callback)
-		b.grid(row=36,column=0, pady = 20)
->>>>>>> e98e1944447add593b52e0fc8ce54d296cd5ae0e
 
 
 	def callback(self):
